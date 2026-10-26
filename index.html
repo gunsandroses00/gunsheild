@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronosheild phishing detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Gunsheild</h1>
+        <p>Detect suspiciuos messages before they catch you;)</p>
+
+        <label for="message">paste a suspicious message</label>
+        <textarea id="message"
+         placeholder="paste your email or message here"></textarea>
+        <button id="analyze">analyze message</button>
+        <section id="results" aria-live="polite" hidden>
+            <h2 id="risk"></h2>
+            <p id="details"></p>
+     </section>
+    </main>
+    <script src="script.js"></script> 
+</body>
+</html>
