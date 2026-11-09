@@ -3,59 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gunshield | Message Security</title>
+    <title>Brakshu Universe Simulator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-
-<div class="container">
-
     <header>
-        <div class="logo">GUNSHIELD.</div>
-        <div class="tagline">MESSAGE SECURITY & THREAT ANALYSIS</div>
-    </header>
-
-    <h1>Message Scanner</h1>
-
-    <p class="description">
-        Analyze suspicious messages and identify common phishing warning signs.
-        Protect your digital identity with Gunshield.
-    </p>
-
-    <div class="card">
-        <label for="messageInput">ENTER MESSAGE TO ANALYZE</label>
-
-        <textarea id="messageInput"
-        placeholder="Paste your suspicious message here..."></textarea>
-
-        <button id="scanButton">ANALYZE MESSAGE =></button>
-
-        <p class="note">Your message is analyzed locally in your browser.</p>
-    </div>
-    <div class="card results" id="results">
-
-        <h2>Analysis Results</h2>
-
-        <div class="score" id="score">0/100</div>
-        <div class="risk" id="risk">Low Risk</div>
-
-        <div class="progress">
-            <div class="bar" id="bar"></div>
+        <div class="logo">Brakshu<span>Orbit</span></div>
+        <div class="status">
+            <span class="dot"></span>Simulation Active
         </div>
+    </header>
+    <main>
+        <aside class="controls">
+            <h2>CONTROL CENTRE</h2>
+            <p class="subtitile">Configure yojr universe</p>
+            <div class="control-group">
+                <label>Gravity<span id="gravityValue">1.0</span></label>
+                <input type="range" id="gravity" min="0.1" max="3" step="0.1" value="1">
+            </div>
+            <div class="control-group">
+                <label>Planet mass<span id="massValue">10</span></label>
+                <input type="range" id="mass" min="2" max="30" value="10">
+            </div>
+            <div class="control-group">
+                <label>Orbital Velocity<span id="velocityValue">1.0</span></label>
+                <input type="range" id="velocity" min="0.2" max="3" step="0.1" value="1">
+            </div>
 
-        <h3>Detected Findings</h3>
-        <div class="findings" id="findings"></div>
-
-        <p class="note">
-            A low score does not guarantee that a message is safe.
-        </p>
-
-    </div>
-
-</div>
-
-<footer>GUNSHIELD  2026 | DIGITAL SECURITY PROJECT :)</footer>
-
+            <button id="addPlanet">+ ADD PLANET</button>
+            <button id="pauseBtn" class="secondary">PAUSE SIMULATION</button>
+            <button id="resetBtn" class="secondary">RESET UNIVERSE</button>
+            <div class="info">
+                <h3>LIVE STATISTICS</h3>
+                <p>Planets:<span id="planetCount">0</span></p>
+                <p>Simulation:<span id="simStatus">Running</span></p>
+            </div>
+            <div class="planet-details" id=""palneDetails>
+                <h3>PLANET INFORMATION</h3>
+                <p id="planetName">Select a planet</p>
+                <p>Mass:<span id="detailMass">--</span></p>
+                <p>Velocity: <span id="detailVelocity">--</span></p>
+                <p>Distance:<span id="detailDistance">--</span></p>
+                <p>Position:<span id="detailPosition">--</span></p>
+            </div>
+        </aside>
+        <section class="universe">
+            <div class="universe-heading">
+                <h2>YOUR UNIVERSE</h2>
+                <span>SECTOR 001</span>
+            </div>
+            <canvas id="space"></canvas>
+            <div class="legend">
+                <span>STAR</span>
+                <span>PLANET</span>
+                <span>ORBIT</span>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
